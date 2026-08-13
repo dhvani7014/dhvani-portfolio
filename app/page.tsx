@@ -112,11 +112,14 @@ export default function Home() {
               className={`project-card project-${index + 1} ${selectedProject === project.title ? "is-selected" : ""}`}
               tabIndex={0}
               onMouseEnter={() => setSelectedProject(project.title)}
-              onMouseLeave={() => setSelectedProject(null)}
+              onMouseLeave={() => {
+                if (window.matchMedia("(hover: hover)").matches) setSelectedProject(null);
+              }}
               onFocus={() => setSelectedProject(project.title)}
               onBlur={() => setSelectedProject(null)}
+              onClick={() => setSelectedProject(selectedProject === project.title ? null : project.title)}
             >
-              <div className="project-main"><p className="project-type">{project.subtitle} <span>{project.period}</span></p><h3>{project.title}</h3><ul className="project-highlights project-preview"><li>{renderHighlighted(project.highlights[0])}</li></ul>{selectedProject !== project.title && project.highlights.length > 1 && <p className="project-more">··· hover for more</p>}{selectedProject === project.title && <ul className="project-highlights project-expanded">{project.highlights.slice(1).map(item => <li key={item}>{renderHighlighted(item)}</li>)}</ul>}</div>
+              <div className="project-main"><p className="project-type">{project.subtitle} <span>{project.period}</span></p><h3>{project.title}</h3><ul className="project-highlights project-preview"><li>{renderHighlighted(project.highlights[0])}</li></ul>{selectedProject !== project.title && project.highlights.length > 1 && <p className="project-more">··· <span className="project-more-desktop">hover</span><span className="project-more-mobile">tap</span> for more</p>}{selectedProject === project.title && <ul className="project-highlights project-expanded">{project.highlights.slice(1).map(item => <li key={item}>{renderHighlighted(item)}</li>)}</ul>}</div>
               <div className="project-footer"><div>{project.tags.map(tag => <span key={tag}>{tag}</span>)}</div>{project.link && <a href={project.link} target="_blank" rel="noopener noreferrer" aria-label={`View ${project.title}`}><ArrowUpRight size={20} /></a>}</div>
             </article>
           ))}
