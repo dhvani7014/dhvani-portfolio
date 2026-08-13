@@ -39,6 +39,9 @@ h1,h2,h3,p { margin-top:0; } h1,h2,h3 { font-family:"Space Grotesk"; letter-spac
 .project-preview li { margin-bottom:0; }.project-expanded { padding-top:0; }
 .education-list { display:grid!important; grid-template-columns:repeat(2,minmax(0,1fr))!important; gap:15px; border:0!important; }.education-card { min-height:275px; padding:25px!important; position:relative; overflow:hidden; border:1px solid var(--line)!important; border-radius:16px; background:linear-gradient(140deg,rgba(29,43,72,.62),rgba(11,16,27,.78)); box-shadow:inset 0 1px rgba(255,255,255,.06); }.education-card + .education-card { border-left:1px solid var(--line)!important; padding-left:25px!important; }.education-card::before { content:""; position:absolute; width:240px; height:240px; border-radius:50%; right:-120px; top:-140px; background:radial-gradient(circle,rgba(108,144,255,.2),transparent 70%); }.education-index,.education-period { position:relative; z-index:1; font:500 10px "DM Mono",monospace!important; letter-spacing:.12em!important; }.education-index { color:#9ca9c5!important; margin:0 0 40px!important; }.education-period { position:absolute; right:25px; top:27px; color:#aab6cf!important; margin:0!important; }.education-card h3,.education-card h4,.education-card>span,.education-card strong { position:relative; z-index:1; }.education-card h3 { font-size:clamp(1.55rem,2.3vw,2.25rem)!important; }.education-card h4 { margin-top:35px!important; }.education-card strong { display:inline-block; margin-top:8px; padding:6px 10px; border:1px solid rgba(230,238,255,.4); border-radius:999px; color:#fff!important; background:linear-gradient(135deg,rgba(255,255,255,.14),rgba(169,191,247,.08)); font:500 10px "DM Mono",monospace!important; }
 .experience-section .timeline-item { grid-template-columns:118px 1fr; gap:14px; }
+.timeline-date { font-size:13px; }
+.company { font-size:13px; }
+.timeline-date, .company { padding-top:0; line-height:1.45; }
 .project-card { min-height:410px!important; }.project-card.is-selected { min-height:550px!important; }
 .experience-section { display:grid; grid-template-columns:1fr 2.55fr; gap:70px; }.experience-section .section-intro { display:block; }.timeline { border-left:1px solid var(--line); }.timeline-item { padding:0 0 53px 42px; position:relative; display:grid; grid-template-columns:145px 1fr; gap:22px; }.timeline-item:before { content:""; position:absolute; width:8px; height:8px; border-radius:50%; border:1px solid #b5c8ff; background:#10182c; left:-4.5px; top:5px; }.timeline-date { color:#aab5cc; font:12px "DM Mono"; letter-spacing:.04em; padding-top:3px; }.company { color:#a8b4ce; font:12px "DM Mono"; margin:0 0 10px; }.company span { color:#707c94; }.timeline h3 { font-size:24px; margin-bottom:20px; }.timeline ul { padding:0; margin:0 0 20px; list-style:none; }.timeline li { color:#aab4c5; line-height:1.58; font-size:14px; margin:12px 0; text-align:justify; }
 .experience-title { font-size:clamp(2.4rem,3.95vw,4.6rem)!important; white-space:nowrap; }
@@ -82,7 +85,7 @@ h1,h2,h3,p { margin-top:0; } h1,h2,h3 { font-family:"Space Grotesk"; letter-spac
   .right-scroll-pane > .section.wrap.split-section { padding-bottom:46px; }
   .right-scroll-pane > .section.wrap.experience-section { padding-top:52px; }
   .right-scroll-pane > .section.wrap.experience-section { padding-bottom:46px; }
-  .right-scroll-pane > .section.wrap.work-section { padding-top:52px; }
+  .right-scroll-pane > .section.wrap.work-section { padding-top:34px; }
   .right-scroll-pane > .section.wrap.work-section { padding-bottom:28px; }
   .right-scroll-pane > .section.wrap.education-section { padding-top:34px; }
   .right-scroll-pane > .section.wrap.education-section { padding-bottom:46px; }
@@ -177,12 +180,35 @@ h1,h2,h3,p { margin-top:0; } h1,h2,h3 { font-family:"Space Grotesk"; letter-spac
 .contact-email,.contact-phone { display:inline-flex; align-items:center; gap:10px; }
 .contact-email { font-size:clamp(1rem,1.8vw,1.45rem); }
 .contact-phone { color:#f4f7ff; font-size:15px; font-weight:700; letter-spacing:.02em; text-shadow:0 0 16px rgba(193,211,255,.18); transition:color .2s,transform .2s; }
-.hero-stat strong { font-family:"Instrument Serif",serif; font-size:clamp(1.8rem,2.5vw,2.35rem); font-weight:400; line-height:.9; letter-spacing:-.045em; color:#eef2ff; }
+.hero-stat strong { font-family:"Instrument Serif",serif; font-size:clamp(1.65rem,2.25vw,2.15rem); font-weight:400; line-height:.9; letter-spacing:-.045em; color:#eef2ff; }
+.hero-stat:nth-child(3) strong { font-size:clamp(1.5rem,2vw,1.9rem); }
 .hero-stat span { margin-top:7px; color:#aab5ca; }
 .hero-name { white-space:nowrap; }
 .hero-identity .hero-name { font-size:clamp(3.45rem,4.55vw,4.9rem); }
 .identity-build { margin-top:14px; }
 .hero-summary { text-align:justify; }
+
+/* Technical skills: match the portfolio's midnight-blue glass cards. */
+.skills-grid { border-top:0; gap:12px; }
+.skills-grid>div,
+.skills-grid>div:nth-child(odd),
+.skills-grid>div:nth-child(even) { padding:22px!important; border:1px solid rgba(174,190,227,.18)!important; border-radius:14px; background:linear-gradient(140deg,rgba(29,43,72,.72),rgba(11,16,27,.88)); box-shadow:inset 0 1px rgba(255,255,255,.07),0 14px 30px rgba(0,0,0,.12); }
+.skills-grid h3 { color:#f3f6ff; font-family:"Instrument Serif",serif; font-size:clamp(1.2rem,1.7vw,1.45rem); font-weight:400; letter-spacing:-.035em; }
+.skills-grid>div { transition:transform .35s,border-color .35s,box-shadow .35s,background .35s; }
+.skills-grid>div:hover { transform:translateY(-7px); border-color:rgba(145,169,255,.75)!important; background:linear-gradient(140deg,rgba(50,72,121,.6),rgba(17,24,42,.84)); box-shadow:0 22px 50px rgba(0,0,0,.35),0 0 0 1px rgba(126,157,255,.13),inset 0 1px rgba(255,255,255,.09); }
+
+/* Certificates: glass cards with the same hierarchy as project cards. */
+.awards-list { display:grid; gap:12px; border-top:0!important; }
+.award-card { grid-template-columns:44px 1fr; gap:14px; padding:22px!important; border:1px solid rgba(174,190,227,.18)!important; border-radius:14px; background:linear-gradient(140deg,rgba(29,43,72,.7),rgba(11,16,27,.88)); box-shadow:inset 0 1px rgba(255,255,255,.07),0 14px 30px rgba(0,0,0,.12); transition:transform .35s,border-color .35s,box-shadow .35s,background .35s; }
+.award-card:hover { transform:translateY(-6px); border-color:rgba(145,169,255,.75)!important; background:linear-gradient(140deg,rgba(50,72,121,.6),rgba(17,24,42,.84)); box-shadow:0 22px 50px rgba(0,0,0,.35),0 0 0 1px rgba(126,157,255,.13),inset 0 1px rgba(255,255,255,.09); }
+.award-card>span { display:grid; place-items:center; width:36px; height:36px; color:#fff; border:1px solid rgba(230,238,255,.42); border-radius:11px; background:linear-gradient(135deg,rgba(255,255,255,.18),rgba(169,191,247,.1)); box-shadow:inset 0 1px rgba(255,255,255,.18),0 0 15px rgba(184,204,255,.08); font:500 11px "DM Mono",monospace; letter-spacing:.08em; }
+.award-card>div>p:first-child { margin:0 0 8px; color:#aebbd5; font:500 10px "DM Mono",monospace; letter-spacing:.11em; }
+.award-card h3 { color:#f3f6ff; font-size:clamp(1.45rem,2.15vw,2rem); margin:0 0 10px; }
+.award-description { color:#b3bdd0; }
+
+/* Keep the experience date and company label on the exact same baseline. */
+.timeline-date,
+.company { padding-top:0!important; }
 
 .portfolio-chat { position:fixed; z-index:20; right:25px; bottom:25px; }
 .chat-trigger { display:inline-flex; align-items:center; gap:9px; padding:12px 15px; border:1px solid rgba(170,194,255,.38); border-radius:999px; color:#f4f7ff; background:linear-gradient(135deg,rgba(72,108,215,.94),rgba(117,150,255,.92)); box-shadow:0 12px 35px rgba(38,72,177,.35),inset 0 1px rgba(255,255,255,.22); font:500 12px "DM Sans",sans-serif; cursor:pointer; transition:transform .2s ease,box-shadow .2s ease; }
@@ -247,4 +273,9 @@ h1,h2,h3,p { margin-top:0; } h1,h2,h3 { font-family:"Space Grotesk"; letter-spac
   .project-1 h3 { white-space:normal; }
   .course-list { grid-template-columns:repeat(2,minmax(0,1fr)); }
   .contact-title { line-height:.95; }
+  .awards-list { display:grid; gap:10px; margin-top:34px; }
+  .award-card { grid-template-columns:40px minmax(0,1fr); gap:11px; padding:18px!important; }
+  .award-card>span { width:32px; height:32px; font-size:10px; }
+  .award-card h3 { font-size:clamp(1.3rem,6.7vw,1.7rem); line-height:1.02; }
+  .award-description { font-size:13px; }
 }
