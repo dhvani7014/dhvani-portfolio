@@ -203,6 +203,14 @@ h1,h2,h3,p { margin-top:0; } h1,h2,h3 { font-family:"Space Grotesk"; letter-spac
 /* Mobile-only layout protection: desktop composition remains unchanged. */
 @media (max-width:800px) {
   html, body, main { overflow-x:hidden; }
+  .hero-identity, .hero-copy { min-width:0; }
+  .identity-main { align-items:center; }
+  .hero-identity .hero-name { white-space:normal; font-size:clamp(2.55rem,11.5vw,3.45rem); line-height:.86; }
+  .identity-build { white-space:normal; }
+  .identity-availability { max-width:100%; white-space:normal; }
+  .hero-stats { grid-template-columns:repeat(3,minmax(0,1fr)); }
+  .hero-stat { min-width:0; }
+  .orb-two { width:360px; height:360px; right:0; }
   .about-title, .projects-title, .education-title, .skills-title, .awards-title, .experience-title, .contact-title { white-space:normal!important; }
   .about-title { font-size:clamp(2.45rem,12vw,3.45rem)!important; }
   .projects-title, .education-title, .skills-title, .awards-title, .experience-title, .contact-title { font-size:clamp(2.2rem,10vw,3.15rem)!important; }
