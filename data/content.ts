@@ -51,6 +51,19 @@ export const experience = [
     ],
     tags: ["Workday HCM", "7+ Countries", "10K+ Employees", "Jira Support", "QA & UAT"],
   },
+  {
+    role: "Software Engineer Intern",
+    company: "Vansh Consulting Inc.",
+    location: "Mumbai, India",
+    period: "Aug 2022 – May 2023",
+    bullets: [
+      "Developed an internal client-operations portal with **Python (Django)**, React, and TypeScript, replacing spreadsheet-based tracking for supplier and purchase-order records.",
+      "Built **REST APIs** and scheduled sync jobs to bring ERP and CRM order data into PostgreSQL, then optimized indexes and joins to reduce the nightly run from **~45 to ~15 minutes**.",
+      "Containerized the application with **Docker** and created a GitHub Actions pipeline for build, test, and deployment, backed by **~60 unit and integration tests**.",
+      "Prototyped a Python ticket-triage service using **spaCy and scikit-learn** that classified incoming requests into **6 categories at ~85% accuracy**, reducing manual helpdesk sorting.",
+    ],
+    tags: ["Python", "Django", "React", "PostgreSQL", "Docker", "GitHub Actions"],
+  },
 ];
 
 export const projects = [

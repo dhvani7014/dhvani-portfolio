@@ -210,6 +210,10 @@ h1,h2,h3,p { margin-top:0; } h1,h2,h3 { font-family:"Space Grotesk"; letter-spac
 .timeline-date,
 .company { padding-top:0!important; }
 
+@media (min-width:801px) {
+  .company { font-size:13px; }
+}
+
 .portfolio-chat { position:fixed; z-index:20; right:25px; bottom:25px; }
 .chat-trigger { display:inline-flex; align-items:center; gap:9px; padding:12px 15px; border:1px solid rgba(170,194,255,.38); border-radius:999px; color:#f4f7ff; background:linear-gradient(135deg,rgba(72,108,215,.94),rgba(117,150,255,.92)); box-shadow:0 12px 35px rgba(38,72,177,.35),inset 0 1px rgba(255,255,255,.22); font:500 12px "DM Sans",sans-serif; cursor:pointer; transition:transform .2s ease,box-shadow .2s ease; }
 .chat-trigger:hover { transform:translateY(-3px); box-shadow:0 16px 42px rgba(51,85,193,.48),inset 0 1px rgba(255,255,255,.25); }
